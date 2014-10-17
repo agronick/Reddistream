@@ -10,14 +10,34 @@ var options = {
   path: ''
 };
 
-if(process.argv[2].indexOf('/comments/') == -1)
+var noindent = false; 
+var noauth = false;
+var url = '';
+
+for(var i = 0; i < process.argv.length; i++)
+{
+  if(process.argv[i] == '-r')
+  {
+    noauth = true;
+  }
+  else if(process.argv[i] == '-i')
+  {
+    noindent = true;
+  }
+  else if(process.argv[i].indexOf('/comments/') != -1)
+  {
+    url = process.argv[i];
+  }
+}
+
+if(url.indexOf('/comments/') == -1)
   console.log('Not a valid URL');
 else{
 
   
-  var start = process.argv[2].indexOf('/r/');
-  var end = process.argv[2].lastIndexOf('/');
-  options.path = process.argv[2].substring(start, end) + '?sort=new';
+  var start = url.indexOf('/r/');
+  var end = url.lastIndexOf('/');
+  options.path = url.substring(start, end) + '?sort=new';
 
   var Runner = {
   apply : function(){  
@@ -70,13 +90,17 @@ else{
 	
 	if(!(key in displayed))
 	{ 
-	  for(var i = 0; i < parents; i++)
+	  if(!noindent)
 	  {
-	    spaces += '  ';
+	    for(var i = 0; i < parents; i++)
+	    {
+	      spaces += '  ';
+	    }
 	  }
+	  
 	  items[key] = "\033[1m" + spaces + $(this).find('.author').html() + "\033[0m: ";
 	  
-	  if(parents != 0)
+	  if(parents != 0 && !noauth)
 	  {
 	    items[key] += "Reply to: " + $(this).parents('.child').first().prev().find('.tagline .author').text() + " - ";
 	  }
