@@ -22,11 +22,9 @@ else{
   var Runner = {
   apply : function(){  
     var req = http.get(options, function(res) { 
-
-    // Buffer the body entirely for processing as a whole.
+ 
     var bodyChunks = [];
-    res.on('data', function(chunk) {
-      // You can process streamed parts here...
+    res.on('data', function(chunk) { 
       bodyChunks.push(chunk);
     }).on('end', function() {
       var body = Buffer.concat(bodyChunks);  
@@ -66,7 +64,34 @@ else{
     var items = Array();
     $('.comment', comments).each(function()
     {
-	items[$(this).attr('data-fullname')] = "\033[1m" + $(this).find('.author').html() + "\033[0m: " + $(this).find('.md').text().trim();
+	var key = $(this).attr('data-fullname'); 
+	var spaces = '';
+	var parents = $(this).parents('.child').length;
+	
+	if(!(key in displayed))
+	{ 
+	  for(var i = 0; i < parents; i++)
+	  {
+	    spaces += '  ';
+	  }
+	  items[key] = "\033[1m" + spaces + $(this).find('.author').html() + "\033[0m: ";
+	  
+	  if(parents != 0)
+	  {
+	    items[key] += "Reply to: " + $(this).parents('.child').first().prev().find('.tagline .author').text() + " - ";
+	  }
+	  
+	  $(this).find('.md').first().children().each(function()
+	  {
+	    if($(this).is('blockquote'))
+	    {
+	      items[key] += "\033[3m Quote: " + $(this).text().trim() + "\033[0m \n";
+	    }else if($(this).is('p'))
+	    {
+	      items[key] += $(this).text().trim();
+	    }
+	  });  
+	}
     }); 
     return items;
   } 
