@@ -1,0 +1,96 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/bin/npm', 'install', 'reditstream' ]
+2 info using npm@2.0.0
+3 info using node@v0.10.32
+4 warn package.json reddistream@1.0.1 No README data
+5 verbose readDependencies using package.json deps
+6 verbose cache add [ 'reditstream', null ]
+7 verbose cache add spec="reditstream" args=["reditstream",null]
+8 verbose parsed spec { raw: 'reditstream',
+8 verbose parsed spec   scope: null,
+8 verbose parsed spec   name: 'reditstream',
+8 verbose parsed spec   rawSpec: '',
+8 verbose parsed spec   spec: '*',
+8 verbose parsed spec   type: 'range' }
+9 verbose parsed spec { raw: 'reditstream',
+9 verbose parsed spec   scope: null,
+9 verbose parsed spec   name: 'reditstream',
+9 verbose parsed spec   rawSpec: '',
+9 verbose parsed spec   spec: '*',
+9 verbose parsed spec   type: 'range' }
+10 verbose addNamed [ 'reditstream', '*' ]
+11 verbose addNamed [ null, '*' ]
+12 silly lockFile 1bf90d84-reditstream reditstream@*
+13 verbose lock reditstream@* /home/kyle/.npm/1bf90d84-reditstream.lock
+14 silly addNameRange { name: 'reditstream', range: '*', hasData: false }
+15 verbose mapToRegistry name reditstream
+16 verbose mapToRegistry uri https://registry.npmjs.org/reditstream
+17 verbose request on initialization, where is /reditstream
+18 verbose request after pass 1, where is /reditstream
+19 verbose request url raw /reditstream
+20 verbose request resolving registry [ 'https://registry.npmjs.org/', './reditstream' ]
+21 verbose request after pass 2, where is https://registry.npmjs.org/reditstream
+22 verbose request no auth needed
+23 info attempt registry request try #1 at 17:21:13
+24 verbose request id 7cae800246e6ae06
+25 http request GET https://registry.npmjs.org/reditstream
+26 http 404 https://registry.npmjs.org/reditstream
+27 verbose headers { date: 'Fri, 17 Oct 2014 21:21:13 GMT',
+27 verbose headers   server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+27 verbose headers   'content-type': 'application/json',
+27 verbose headers   'cache-control': 'max-age=0',
+27 verbose headers   'content-length': '52',
+27 verbose headers   'accept-ranges': 'bytes',
+27 verbose headers   via: '1.1 varnish',
+27 verbose headers   age: '0',
+27 verbose headers   'x-served-by': 'cache-atl6225-ATL',
+27 verbose headers   'x-cache': 'MISS',
+27 verbose headers   'x-cache-hits': '0',
+27 verbose headers   'x-timer': 'S1413580873.600546,VS0,VE26',
+27 verbose headers   'keep-alive': 'timeout=10, max=50',
+27 verbose headers   connection: 'Keep-Alive' }
+28 silly registry.get cb [ 404,
+28 silly registry.get   { date: 'Fri, 17 Oct 2014 21:21:13 GMT',
+28 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+28 silly registry.get     'content-type': 'application/json',
+28 silly registry.get     'cache-control': 'max-age=0',
+28 silly registry.get     'content-length': '52',
+28 silly registry.get     'accept-ranges': 'bytes',
+28 silly registry.get     via: '1.1 varnish',
+28 silly registry.get     age: '0',
+28 silly registry.get     'x-served-by': 'cache-atl6225-ATL',
+28 silly registry.get     'x-cache': 'MISS',
+28 silly registry.get     'x-cache-hits': '0',
+28 silly registry.get     'x-timer': 'S1413580873.600546,VS0,VE26',
+28 silly registry.get     'keep-alive': 'timeout=10, max=50',
+28 silly registry.get     connection: 'Keep-Alive' } ]
+29 silly lockFile 1bf90d84-reditstream reditstream@*
+30 silly lockFile 1bf90d84-reditstream reditstream@*
+31 verbose stack Error: 404 Not Found: reditstream
+31 verbose stack     at RegClient.<anonymous> (/usr/lib/node_modules/npm-registry-client/lib/request.js:258:14)
+31 verbose stack     at Request._callback (/usr/lib/node_modules/npm-registry-client/lib/request.js:197:65)
+31 verbose stack     at Request.self.callback (/usr/lib/node_modules/request/request.js:237:22)
+31 verbose stack     at Request.emit (events.js:98:17)
+31 verbose stack     at Request.<anonymous> (/usr/lib/node_modules/request/request.js:1146:14)
+31 verbose stack     at Request.emit (events.js:117:20)
+31 verbose stack     at IncomingMessage.<anonymous> (/usr/lib/node_modules/request/request.js:1097:12)
+31 verbose stack     at IncomingMessage.emit (events.js:117:20)
+31 verbose stack     at _stream_readable.js:943:16
+31 verbose stack     at process._tickCallback (node.js:419:13)
+32 verbose statusCode 404
+33 verbose pkgid reditstream
+34 verbose cwd /home/kyle/Apps/reddistream
+35 error Linux 3.16.3KyleFishGood-1-desktop
+36 error argv "node" "/usr/bin/npm" "install" "reditstream"
+37 error node v0.10.32
+38 error npm  v2.0.0
+39 error code E404
+40 error 404 Not Found: reditstream
+40 error 404
+40 error 404 'reditstream' is not in the npm registry.
+40 error 404 You should bug the author to publish it (or use the name yourself!)
+40 error 404 It was specified as a dependency of 'reddistream'
+40 error 404
+40 error 404 Note that you can also install from a
+40 error 404 tarball, folder, http url, or git url.
+41 verbose exit [ 1, true ]

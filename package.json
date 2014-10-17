@@ -1,0 +1,35 @@
+{
+  "name": "reddistream",
+  "version": "1.0.1",
+  "description": "Povides a stream of new comments on a Reddit thread viewable in a terminal.",
+  "main": "./bin/reddistream.js",
+  "scripts": {
+    "test": "help"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/agronick/redistream"
+  },
+  "keywords": [
+    "reddit",
+    "stream",
+    "update",
+    "terminal",
+    "refresh"
+  ],
+  "bin": {
+    "reddistream": "./bin/reddistream.js"
+  },
+  "author": "Kyle Agronick agronick@gmail.com",
+  "license": "MIT",
+  "dependencies": {"http" : ">=0.0.0", "cheerio" : ">=0.17.0"}, 
+  "devDependencies": {},
+  "optionalDependencies": {},
+  "engines": {
+    "node": "*"
+  },
+  "bugs": {
+    "url": "https://github.com/agronick/reddistream/issues"
+  },
+  "homepage": "https://github.com/agronick/reddistream"
+}
