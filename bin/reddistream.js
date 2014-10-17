@@ -46,8 +46,7 @@ else{
       
       for(var i = length; i > 0; i--)
       {
-	console.log(toPrint[i]);
-	console.log('');
+	console.log(toPrint[i]); 
       }
     });
     });
