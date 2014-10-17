@@ -1,6 +1,6 @@
 {
   "name": "reddistream",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Povides a stream of new comments on a Reddit thread viewable in a terminal.",
   "main": "./bin/reddistream.js",
   "scripts": {
