@@ -4,7 +4,7 @@ Reddistream
 Simple nodejs script for having a reddit comments display in a terminal window.
 By default comments dynamicly update every five seconds.
 
-To run simply invoke reddistream [URL of comments] [Optional switchs]
+To run simply invoke reddistream [URL of comments] [Optional switches]
 
 Cheerio is the only dependency it requires.
 
